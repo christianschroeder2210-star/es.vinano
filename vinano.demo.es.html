@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vinano Demo – Asistente Telefónico con IA</title>
+  <meta name="description" content="Demo pública: Pruebe el asistente telefónico con IA de Vinano para el sector inmobiliario (Inbound y Outbound)." />
+
+  <style>
+    :root{
+      --bg:#05060A;
+      --bg2:#0A0C12;
+      --text:#EDEDF0;
+      --neon1:#8B5CF6;
+      --neon2:#22D3EE;
+      --neon3:#A3FF12;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 20% 10%, rgba(139,92,246,.18), transparent 60%),
+        radial-gradient(900px 500px at 80% 30%, rgba(34,211,238,.14), transparent 55%),
+        linear-gradient(180deg,var(--bg),var(--bg2));
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:30px 15px 120px;
+    }
+
+    .card{
+      width:min(1000px,100%);
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(0,0,0,.35);
+      border-radius:22px;
+      padding:28px;
+      box-shadow:0 20px 60px rgba(0,0,0,.6);
+    }
+
+    h1{
+      margin:0 0 10px;
+      font-size:clamp(24px,3vw,36px);
+      background:linear-gradient(90deg,#fff,#22D3EE,#8B5CF6,#fff);
+      background-size:200% 100%;
+      -webkit-background-clip:text;
+      color:transparent;
+      animation:shine 5s linear infinite;
+    }
+
+    @keyframes shine{
+      0%{background-position:0%}
+      100%{background-position:200%}
+    }
+
+    p{
+      color:rgba(230,230,240,.85);
+      line-height:1.6;
+    }
+
+    .grid{
+      margin-top:20px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+    }
+
+    .panel{
+      background:rgba(0,0,0,.3);
+      border:1px solid rgba(255,255,255,.1);
+      border-radius:18px;
+      padding:18px;
+    }
+
+    .panel h2{
+      margin:0 0 10px;
+      font-size:16px;
+      color:#fff;
+    }
+
+    ul{
+      margin:0;
+      padding-left:18px;
+      line-height:1.6;
+      color:rgba(220,220,230,.85);
+    }
+
+    .btnRow{
+      margin-top:18px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:10px 14px;
+      border-radius:12px;
+      background:#0E1014;
+      border:1px solid rgba(255,255,255,.2);
+      color:#fff;
+      text-decoration:none;
+      font-weight:600;
+      transition:.2s;
+    }
+
+    .btn:hover{
+      border-color:#22D3EE;
+      box-shadow:0 0 20px rgba(34,211,238,.2);
+    }
+
+    @media(max-width:800px){
+      .grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+
+    <h1>Pruebe nuestro asistente telefónico con IA</h1>
+
+    <p>
+      Haga su consulta como si estuviera llamando a una <strong>inmobiliaria</strong>, 
+      <strong>promotora</strong> o <strong>estudio de arquitectura</strong>.
+      Esta demo muestra cómo la atención telefónica, la calificación de interesados
+      y el seguimiento automático pueden funcionar con inteligencia artificial.
+    </p>
+
+    <div class="grid">
+
+      <div class="panel">
+        <h2>Cómo funciona la demo</h2>
+        <ul>
+          <li>Haga clic en “Vinano Demo” abajo a la derecha.</li>
+          <li>Permita el acceso al micrófono.</li>
+          <li>Explique su consulta normalmente.</li>
+          <li>Puede finalizar la llamada en cualquier momento.</li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <h2>Ejemplos de prueba</h2>
+        <ul>
+          <li>“Quiero agendar una visita para un piso.”</li>
+          <li>“¿Hay disponibilidad en esta promoción?”</li>
+          <li>“Llámeme como un interesado antiguo.”</li>
+          <li>“Haga seguimiento de un presupuesto pendiente.”</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="btnRow">
+      <a class="btn" href="https://www.vinano.de" target="_blank">www.vinano.de</a>
+      <a class="btn" href="mailto:info@vinano.de">info@vinano.de</a>
+      <a class="btn" href="tel:+4915679706297">+49 15679 706297</a>
+    </div>
+
+    <p style="margin-top:15px;font-size:13px;color:rgba(200,200,210,.7)">
+      Aviso: Esto es una demo pública. No se gestionan propiedades ni citas reales.
+    </p>
+
+  </div>
+
+  <!-- VAPI WIDGET -->
+  <script src="https://unpkg.com/@vapi-ai/client-sdk-react/dist/embed/widget.umd.js" async></script>
+
+  <vapi-widget
+    public-key="651c1cad-4a59-4957-ac1d-b1e3f1d6279e"
+    assistant-id="437f6355-ddb3-4bfc-bb65-be253c3a94cc"
+    mode="voice"
+    theme="dark"
+    position="bottom-right"
+    size="compact"
+    radius="large"
+    base-color="#07080A"
+    accent-color="#22D3EE"
+    button-base-color="#0E1014"
+    button-accent-color="#E8E8E8"
+    main-label="Vinano Demo"
+    start-button-text="Iniciar"
+    end-button-text="Finalizar"
+    empty-voice-message="Haga clic en “Iniciar” para comenzar la demo."
+    require-consent="true"
+    terms-content="Esto es una demo pública de Vinano. No se reservan citas reales. Al iniciar, usted acepta."
+  ></vapi-widget>
+
+</body>
+</html>
